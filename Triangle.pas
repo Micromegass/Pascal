@@ -54,11 +54,4 @@ else
 end. {ending program}
 
 
-
-
-
-
-
-
-
 end.

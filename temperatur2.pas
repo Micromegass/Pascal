@@ -15,4 +15,3 @@ Celsius := ((5*(Fahrenheit-32)) / 9.00);
 writeln(trunc(Celsius));
 
 end.
-s
