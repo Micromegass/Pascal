@@ -1,18 +1,22 @@
-program test;
+program WasPassiert(input, output);
 
-var 
-b : Boolean;
-i : integer;
+var
+  a, b, c: Integer;
 
 begin
-b := true;
-i :=5;
-
-
-i div 3.0
-
-
+  b := 0;
+  c := 1;
+ 
+  readln(a);
+  
+  while a > 0 do
+  
+  begin
+    b := b+c*(a mod 2);
+    a := a div 2;
+    c := c*10;
+  end;
+  
+  writeln(b)
+  
 end.
-
-
-
