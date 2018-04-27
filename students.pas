@@ -34,7 +34,8 @@ readln(AnzahlSt);
 
 if (AnzahlSt) > MAXTEILNEHMER then 
 begin
-    writeln ('Bitte hoechstens ',MAXTEILNEHMER, ' Eingaben!');
+    writeln ('Bitte hoechstens ',
+    MAXTEILNEHMER, ' Eingaben!');
     AnzahlSt := MAXTEILNEHMER
     
 end; 
