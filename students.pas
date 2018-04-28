@@ -12,7 +12,7 @@ type
 tNatZahlPlus1 = 1..maxint;
 tNatZahl = 0..maxint;
 tstatus = (aktiv, passiv);
-
+m
 tIndex = 1..MAXTEILNEHMER;
 tMAtrNrFeld = array[tIndex] of tNatZahlPlus1;
 tStatusFeld = array[tIndex] of tStatus;
