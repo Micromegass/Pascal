@@ -11,7 +11,7 @@ SPALTENMAX = 4;
 
 type
 tZeile = 1..ZEILENMAX;
-tSpalte = SPALTENMAX;
+tSpalte = 1..SPALTENMAX;
 
 
 tMatrix = array [tZeile, tSpalte] of integer;
@@ -29,17 +29,52 @@ j : tSpalte;
 begin 
 {lesen der Matrixwerte in A}
 for i := 1 to ZEILENMAX do 
-	for j: 1 to SPALTENMAX do
+	for j := 1 to SPALTENMAX do
 		readln(A[i,j]);
 
 
 {Berechnen der Zeilensumme in B}
 
 for i := 1 to ZEILENMAX do 
-
 begin
-	B[i] := 0 
-		for j := 1 to 
+	B[i] := 0;
+		for j := 1 to SPALTENMAX do
+		B[i] := B[i] + A[i, j]
+end;
+
+
+{Berechnen der Spaltensumme in C}
+
+for j:= 1 to SPALTENMAX do
+begin 
+
+C[j] := 0;
+for i:=1 to ZEILENMAX do 
+C[j] := C[j] + A[i,j]
+end; 
+
+
+{Drucken von A und B}
+
+writeln;
+
+for i:= 1 to ZEILENMAX do
+begin 
+	for j := 1 to Spaltenmax do
+	write (A[i,j]:5);
+	writeln (B[i]:10)	
+end;
+
+writeln;
+
+for j := 1 to SPALTENMAX do 
+write (C[j]:5);
+writeln
+end.
+
+
+		
+		
 		
 
 
