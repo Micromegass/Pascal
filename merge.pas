@@ -34,9 +34,13 @@ begin
 
   { Verschmelzungsprozess beginnen }
   
+  {Initialisierung der Variablen}
+  
 	i := 1;
 	j := 1;
 	k := 1;
+	
+	{Übertragen Feld1 und Feld2 ins Ergebnisfeld}
   
 while (i <= FELDLAENGE1) and (j <= FELDLAENGE2) do
 if Feld1[i] <= Feld2[j] then
