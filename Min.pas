@@ -19,7 +19,7 @@ min := number;
 
 
 while number <> 0 do
-
+a
 begin
 if number < min then
 min := number;
