@@ -11,25 +11,28 @@ var
 
 
 procedure LoesungBestimmen (  
-	a, b, c : real;
-	Loesung1, Loesung2 : real;
-	gibtLoesung : boolean); 
+	inA,
+	inB,
+	inC : real;
+ var outLoesung1 : real;
+ var outLoesung2 : real;
+ var outGibtLoesung : boolean); 
 	
 	var
     d : real; { Hilfsvariable }
 	
 	
 	begin
-	d := b * b - 4.0 * a * c;
-	if (d < 0.0) or (a = 0.0) then
+	d := inB * inB - 4.0 * inA * inC;
+	if (d < 0.0) or (inA = 0.0) then
 {	 nicht loesbar oder Vorbedingung nicht erfuellt }
-      gibtLoesung := false
+      outGibtLoesung := false
 		else 
 		begin
       exist := true;
       d := sqrt (d);
-      L1 := -(b - d) / (2.0 * a);
-      L2 := -(b + d) / (2.0 * a)
+      L1 := -(inB - d) / (2.0 * inA);
+      L2 := -(inb + d) / (2.0 * inA)
 end
 end; { LoesungBestimmen }
 
