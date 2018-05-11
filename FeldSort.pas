@@ -82,5 +82,8 @@ FeldSortieren (EingabeFeld);
 
 for index := 1 to FELDGROESSE do 
 	write (EingabeFeld[index]:6); 
-writeln
+	writeln
 end.
+
+
+
