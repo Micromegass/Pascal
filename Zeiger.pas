@@ -1,8 +1,4 @@
 
-program Zeiger (input, output);
-var
-Eingabe : integer;  
-
 
 
 
