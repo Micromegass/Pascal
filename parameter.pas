@@ -1,44 +1,41 @@
-
-program Parameter1 (output);
-{ Dieses Programm hat keine sinnvolle Semantik, zeigt schlech-
-  ten Programmierstil und dient nur zum Ueben der Parameterueber-
-  gabearten. }
+procedure moveToFront (
+                inSuchwert : integer;
+            var ioAnfang : tRefListe;
+            var outGefunden : boolean);
+{ bestimmt in einer linearen Liste das erste Element mit dem 
+  Wert inSuchwert und positioniert es als erstes Listen-
+  element }
 
   var 
-  a,
-  b,
-  c : integer;
-
-  procedure globalProc ({call_by_1}  d, e, f: integer);
-
-    var 
-    a : integer; 
-
-    procedure lokalProc ({call_by_2}  g, h, i: integer);
-
-      var 
-      b : integer;
-
-    begin
-      g := h + i;
-      b := c;
-      a := 2 * b;
-      i := a + b
-    end; { lokalProc }
-
-  begin
-    a := 4;
-    b := 5;
-    c := 6;
-    d := e - f;
-    lokalProc (a, d, e);
-    e := f - d
-  end; { globalProc }
+  ZuletztGeprueftesElement,
+  UmhaengeHilfe : tRefListe;
+  gefunden : boolean;
 
 begin
-  a := 1;
-  b := 2;
-  c := 3;
-  globalProc (c, b, a);
-  writeln (a, ' ', b, ' ', c)
-end. { Parameter1 }
+  gefunden := false;
+  if ioAnfang <> nil then { Liste ist nicht leer }
+    if ioAnfang^.info = inSuchwert then 
+      { gefundenes Element ist schon das erste Element }
+      gefunden := true
+    else 
+    begin
+      ZuletztGeprueftesElement := ioAnfang;
+      while (ZuletztGeprueftesElement^.next <> nil) and not gefunden do
+        if ZuletztGeprueftesElement^.next^.info = inSuchwert then
+        begin { Suchwert ist gefunden }
+          gefunden := true;
+          
+          
+          
+          UmhaengeHilfe := ZuletztGeprueftesElement^.info;
+ZuletztGeprueftesElement^.next := ioAnfang^.next;
+ioAnfang^.next := UmhaengeHilfe;
+          
+          
+          
+        end
+        else 
+          ZuletztGeprueftesElement := ZuletztGeprueftesElement^.next
+    end; { else }
+  outGefunden := gefunden
+end; { moveToFront }

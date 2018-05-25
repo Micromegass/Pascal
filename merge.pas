@@ -64,7 +64,7 @@ begin
 	i := i + 1;
 	k := k + 1
 end; 
-		
+		a
 	{ restlichen Werte von Feld1 zum Ergebnisfeld}
 
 while j <= FELDLAENGE2 do

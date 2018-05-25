@@ -33,37 +33,32 @@ program TesteSortiereListe(input, output);
       istEingefuegt := false;
       
       
-      if ioRefListe^.wert > WirdJetztSortiert^.wert then
-
+      if WirdJetztSortiert^.wert <= ioRefListe^.wert then 
+      {aktuelles Element am kleinsten.}
 	  begin 
-	  
-	  WirdJetztSortiert^.next := ioRefListe;
-	  ioRefListe := WirdJetztSortiert;
+		IstSchonSortiert^.next := WirdJetztSortiert^.next;
+		WirdJetztSortiert^.next := ioRefListe; 
+		ioRefListe := WirdJetztSortiert 
 	  end 
-	  
 	  else 
-	  begin
-	  if WirdJetztSortiert^.wert > IstSchonSortiert^.wert then 
-	  WirdJetztSortiert^.next := 
-	  
-	  
-	   
+	  if WirdJetztSortiert^.wert > IstSchonSortiert^.wert then
+	  {bisher groesste element und bleibt deshalb an seiner Position}
+		IstSchonSortiert := WirdJetztSortiert
+	  else 
+	  begin 
+	  {Postion wird nun gesucht und Element eingefügt}
+		EinfuegePosition := ioRefListe;
 		
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+		while EinfuegePosition^.next^.wert < WirdJetztSortiert^.wert
+		do 
+		Einfuegeposition := Einfuegeposition^.next ;
+		IstSchonSortiert^.next := WirdJetztSortiert^.next ;
+		WirdJetztSortiert^.next := EinfuegePosition^.next; 
+		EinfuegePosition^.next := WirdJetztSortiert
+		end; 
+  
          WirdJetztSortiert := IstSchonSortiert^.next
+        end
     end
   end;
 
