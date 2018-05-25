@@ -1,7 +1,4 @@
 
-program Baum (input, output);
-
-begin
 tRefBinBaum = ^tBinBaum;
 tBinBraum = record
 			info: integer;
