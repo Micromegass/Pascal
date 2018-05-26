@@ -1,7 +1,7 @@
 
 
 
-program Kreisumfang;
+aprogram Kreisumfang;
 
 const
 PI = 3.141592654;
