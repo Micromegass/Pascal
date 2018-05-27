@@ -1,0 +1,27 @@
+
+function FeldMaxA (
+          var inFeld : tFeld;
+              inUnten,
+              inOben : tIndex) : integer;
+{ bestimmt rekursiv das Maximum in einem Feld
+    mit den Grenzen inUnten und inOben }
+
+  var
+  Mitte : tIndex;
+  MaxL,
+  MaxR : integer;
+
+begin
+  if inUnten = inOben then
+    FeldMaxA := inFeld[inUnten]
+  else
+  begin
+    Mitte := (inUnten + inOben) div 2;
+    MaxL := FeldMaxA (inFeld,inUnten,Mitte);
+    MaxR := FeldMaxA (inFeld,Mitte+1,inOben);
+    if MaxL > MaxR then
+      FeldMaxA := MaxL
+    else
+      FeldMaxA := MaxR
+  end
+end; { FeldMaxA }
