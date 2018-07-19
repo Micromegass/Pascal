@@ -1,25 +1,32 @@
 
 
-program minimum (input, output); 
+program ggt (input, output); 
 
 
 var
-i: integer;
-Zahl : integer; 
-max: integer;
+x,
+y : integer; 
 
+begin
+
+
+
+writeln('insert two numbers');
+readln(x);
+readln(y); 
+
+if (x <= 0) or (y<=0) then 
+writeln('Fehler')
+else 
 begin 
 
-writeln('enter 4 nbrs');
-max := 0; 
-
-for i:=1 to MAXE do 
-begin
-readln(Zahl); 
-	if Zahl > max then 
-	max := Zahl;
-	
-end;
-writeln('maximum is: ', max)
-
-end.
+while x <> y do
+ begin
+	if x>y then
+    x := x - y
+    else
+    y := y - x
+ end
+ end;
+ writeln(x)
+ end.
