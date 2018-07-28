@@ -2,6 +2,9 @@
 
 program bool (input, output);
 
+	const
+	tab =('-');
+  
   var 
   vorhanden : boolean; 
   
@@ -9,9 +12,12 @@ program bool (input, output);
   begin
   vorhanden := true; 
 	
-	if not vorhanden then
-	write('DU hast recht du genius')
+	if vorhanden then
+	begin
+	write('DU hast recht du genius');
+	write(tab)
+	end
 	else 
 	write ('depp')
-
+	
 	end.
