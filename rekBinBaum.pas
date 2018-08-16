@@ -34,5 +34,5 @@ end;
 
 
 begin 
-write(ObereSchranke(100))
+write(ObereSchranke(10))
 end.
