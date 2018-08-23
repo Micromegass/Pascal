@@ -17,7 +17,7 @@ function Fib (inZahl : tNatzahl): tNatZahl;
 	
 begin 
 
-writeln(Fib(8))
+writeln(Fib(13))
 
 end.
 	
