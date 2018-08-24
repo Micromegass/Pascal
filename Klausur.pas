@@ -20,30 +20,29 @@ i:tIndex;
 procedure overwrite (var ioFeld:tFeld);
 
  var 
- i : tIndex;
+ i, k : tIndex;
  j: tIndex;
  
  
 begin 
 
+k := 1; 
+i := 1; 
 
+while k < MAX do
+ 
+begin
+ while i < MAX do 
+	for j:= 2 to MAX do 
+	begin
+	 if Feld[i] = Feld[j] then 
+	  Feld[i] := 0;
+	 end;
+	  i := i +1;
 
- for i:=1 to MAX do 
- begin
-
-	j:= 2;
-  while j <> MAX do
-		if Feld[i] = Feld[j] then
-		begin
-		Feld[j] := 0;
-		j := j + 1
-		end
-		else 
-		 j := j+1
-  end
-		
-		
-
+	  k := k+1
+	
+end  
 		
 		
 
